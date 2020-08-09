@@ -1,0 +1,28 @@
+{
+  "name": "@ayamejs/humanize",
+  "version": "0.1.0",
+  "description": "Utilities to convert data into human readable strings.",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayamejs/humanize.git"
+  },
+  "keywords": [
+    "humanize",
+    "human",
+    "readable",
+    "string",
+    "time",
+    "bytes"
+  ],
+  "author": "Raven <ravenr.anime@gmail.com> (https://ravener.now.sh/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayamejs/humanize/issues"
+  },
+  "homepage": "https://github.com/ayamejs/humanize#readme"
+}
