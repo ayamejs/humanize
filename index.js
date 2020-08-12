@@ -35,7 +35,32 @@ function bytes(bytes) {
   return (!bytes && "0 Bytes") || `${(bytes / Math.pow(1024, i)).toFixed(2)} ${suffixes[i]}`;
 }
 
-module.exports = { duration, bytes, version };
+/**
+ * Ordinal gives you the input number in a rank/ordinal format.
+ * Ordinal(3) -> 3rd
+ * @param {Number} num - The number.
+ * @returns {String}
+ */
+function ordinal(num) {
+  let suffix = "th";
+
+  switch(num % 10) {
+  case 1:
+    if(num % 100 !== 11) suffix = "st";
+    break;
+  case 2:
+    if(num % 100 !== 12) suffix = "nd";
+    break;
+  case 3:
+    if(num % 100 !== 13) suffix = "rd";
+    break;
+  }
+
+  return `${num}${suffix}`;
+}
+
+
+module.exports = { duration, bytes, ordinal, version };
 
 
 
