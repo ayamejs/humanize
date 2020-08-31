@@ -1,5 +1,5 @@
 {
-  "name": "@ayamejs/humanize",
+  "name": "@ayame/humanize",
   "version": "0.2.0",
   "description": "Utilities to convert data into human readable strings.",
   "main": "index.js",

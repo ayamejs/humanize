@@ -40,6 +40,11 @@ function bytes(bytes) {
  * Ordinal(3) -> 3rd
  * @param {Number} num - The number.
  * @returns {String}
+ * @example
+ * humanize.ordinal(3)
+ * // => 3rd
+ * humanize.ordinal(1)
+ * // => 1st
  */
 function ordinal(num) {
   let suffix = "th";
@@ -59,8 +64,27 @@ function ordinal(num) {
   return `${num}${suffix}`;
 }
 
+/**
+ * Joins a string array but uses a different word before the last element.
+ * @param {Array<String>} data - The array of strings to join.
+ * @param {String} [sep=", "] - The seperator to join with.
+ * @param {String} [word="or"] - The word to use before the last element.
+ * @example
+ * humanize.join(["you", "me", "them"]);
+ * // => you, me or them
+ * humanize.join(["hello", "world", "bye"], " | ");
+ * // hello | world or bye
+ * humanize.join(["you", "me", "them"], ", ", "and");
+ * // you, me and them
+ */
+function join(data, sep = ", ", word = "or") {
+  if(data.length < 3) return data.join(` ${word} `);
+  const last = data.pop();
+  return `${data.join(sep)} ${word} ${last}`;
+}
 
-module.exports = { duration, bytes, ordinal, version };
+
+module.exports = { duration, bytes, ordinal, join, version };
 
 
 
